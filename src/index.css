@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", ui-serif, Georgia, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  --color-gold-50: #fdfaf2;
+  --color-gold-100: #f7eed7;
+  --color-gold-200: #eedcaf;
+  --color-gold-300: #e2c37e;
+  --color-gold-400: #d6ab52;
+  --color-gold-500: #c58e37;
+  --color-gold-600: #ad722c;
+  --color-gold-700: #8c5425;
+  --color-gold-800: #714121;
+  --color-gold-900: #5d341a;
+
+  --color-matte-950: #050505;
+  --color-matte-900: #0a0a0a;
+  --color-matte-800: #121212;
+  --color-matte-700: #1a1a1a;
+  --color-matte-600: #262626;
+  --color-cream-100: #fcfbf7;
+  --color-cream-200: #f5f2e9;
+  --color-cream-300: #eae4d3;
+}
+
+/* Custom visual utilities */
+@layer utilities {
+  .text-glow-indigo {
+    text-shadow: 0 0 12px rgba(99, 102, 241, 0.4);
+  }
+  .bg-radial-blur {
+    background: radial-gradient(circle at center, rgba(99, 102, 241, 0.15), transparent 70%);
+  }
+  .bg-radial-purple {
+    background: radial-gradient(circle at center, rgba(168, 85, 247, 0.15), transparent 70%);
+  }
+  .bg-radial-blue {
+    background: radial-gradient(circle at center, rgba(59, 130, 246, 0.15), transparent 70%);
+  }
+  .glassmorphism {
+    background: rgba(13, 13, 16, 0.65);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  .glassmorphism-light {
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+  }
+  .indigo-border-glow {
+    border: 1px solid rgba(99, 102, 241, 0.15);
+    box-shadow: 0 0 25px rgba(99, 102, 241, 0.05);
+  }
+  .indigo-border-glow-hover:hover {
+    border: 1px solid rgba(99, 102, 241, 0.35);
+    box-shadow: 0 0 35px rgba(99, 102, 241, 0.12);
+  }
+}
+
+/* Base resets & scrollbars */
+html {
+  scroll-behavior: smooth;
+  background-color: #050505;
+  color: #fcfbf7;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #050505;
+}
+::-webkit-scrollbar-thumb {
+  background: #1a1a1a;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #6366f1;
+}
+
+/* Cinematic text animation utilities */
+.reveal-text {
+  background: linear-gradient(135deg, #fcfbf7 30%, #eae4d3 60%, rgba(99, 102, 241, 0.8) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Interactive Cursor Hide on Touch */
+@media (hover: none) {
+  .custom-cursor {
+    display: none !important;
+  }
+}
